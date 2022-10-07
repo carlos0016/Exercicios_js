@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <section class="container">
+        <p>
+            3) Escreva um programa para ler uma temperatura em graus Celsius,
+            calcular e escrever o valor correspondente em graus
+            Fahrenheit. (F = (C * 9/5) + 32)
+        </p>
+        <label for="temperaturaEntrada">qual a temperatura ?</label>
+        <input type="text" id="temperaturaEntrada">
+        <button onclick="">calcular</button>
+    </section>
+</body>
+
+<script>
+    function calcularTemperatura() {
+        var celsius = document.getElementById("temperaturaEntrada").value;
+        var f = (celsius * 9 / 5) + 32;
+        alert("Temperatura:" + f)
+    }
+
+</script>
+
+</html>
