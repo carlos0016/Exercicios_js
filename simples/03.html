@@ -19,8 +19,10 @@
             Fahrenheit. (F = (C * 9/5) + 32)
         </p>
         <label for="temperaturaEntrada">qual a temperatura ?</label>
-        <input type="text" id="temperaturaEntrada">
-        <button onclick="">calcular</button>
+        <input type="text" value="0" id="temperaturaEntrada">
+        <button onclick="calcularTemperatura()">calcular</button>
+        <span id="saidatexto"></span>
+
     </section>
 </body>
 
@@ -28,7 +30,9 @@
     function calcularTemperatura() {
         var celsius = document.getElementById("temperaturaEntrada").value;
         var f = (celsius * 9 / 5) + 32;
-        alert("Temperatura:" + f)
+        alert("Temperatura:" + f);
+
+        document.getElementById("saidaTexto");
     }
 
 </script>
