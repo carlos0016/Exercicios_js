@@ -23,22 +23,29 @@
             a área ocupada por portas e janelas). Cada caixa de azulejos possui 1,5 m2.
 
         </h3>
-        <label>quantidade e caixas:</label>
-        <input type="text" id="quantidade" value="0">
-        <button onclick="calcularQuantidade()"> ok </button>
+
+        <label>quantidade de caixas:</label>
+        <input type="text" id="caixa" value="0">
+        <button onclick="quantidade()"> ok </button>
 
 
     </section>
 </body>
 
-
 <script>
-    function calcularQuantidade() {
 
-        var caixas = document.getElementById("pi")
-            ;
-        var resposta = 2 * 2(quantidade)
-        console.log(resposta)
+
+    function quantidade() {
+        //const calcular = (comprimento,largura,altura) =>((comprimento * altura)/1.5)*2 +((largura*altura)/1.5)*2;
+        //var ncaixa = (((comprimrnto * altura)/1,5)*2) + (((largura * altura)/1,5)*2)
+        var result = (largura + comprimento + altura) / 1.5 * 2;
+
+        document.getElementById("saidadetexto").innerHTML = "quantidade de caixas:" + resposta;
+
+        document.getElementById("texto").innerHTML =
+            "<div class='alert alert-danger'>Resposta: " + result + "</div>";
+
+        console.log(result)
     }
 </script>
 
