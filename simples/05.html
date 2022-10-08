@@ -13,42 +13,42 @@
 </head>
 
 <body>
-    <section class="container">
+    <p>
+        5) Escreva um programa para ler as dimensões de uma cozinha retangular (comprimento, largura e altura), calcular
+        e
+        escrever a quantidade de caixas de azulejos para se colocar em todas as suas paredes (considere que não será
+        descontada
+        a área ocupada por portas e janelas). Cada caixa de azulejos possui 1,5 m2.
 
-        <h3>
-            5) Escreva um programa para ler as dimensões de uma cozinha retangular (comprimento, largura e altura),
-            calcular e
-            escrever a quantidade de caixas de azulejos para se colocar em todas as suas paredes (considere que não será
-            descontada
-            a área ocupada por portas e janelas). Cada caixa de azulejos possui 1,5 m2.
+    </p>
 
-        </h3>
+    <form>
+        <input type="text" id="largura" placeholder="Quantidade de largura">
+        <input type="text" id="comprimento" placeholder="Quantidade de comprimento">
+        <input type="text" id="altura" placeholder="Quantidade de altura">
 
-        <label>quantidade de caixas:</label>
-        <input type="text" id="caixa" value="0">
-        <button onclick="quantidade()"> ok </button>
-
-
-    </section>
+        <button type="button" onclick="caixasDeAzuleijos()">calcular</button>
+    </form>
+    <span id="resposta"></span>
 </body>
+
+</html>
 
 <script>
 
+    function caixasDeAzuleijos() {
 
-    function quantidade() {
-        //const calcular = (comprimento,largura,altura) =>((comprimento * altura)/1.5)*2 +((largura*altura)/1.5)*2;
-        //var ncaixa = (((comprimrnto * altura)/1,5)*2) + (((largura * altura)/1,5)*2)
-        var result = (largura + comprimento + altura) / 1.5 * 2;
+        var l = parseFloat(document.getElementById("largura").value);
+        var com = parseFloat(document.getElementById("comprimento").value);
+        var a = parseFloat(document.getElementById("altura").value);
 
-        document.getElementById("saidadetexto").innerHTML = "quantidade de caixas:" + resposta;
+        var r1 = (comp * a * l);
+        var resultado = (r1 / 1.5);
+        document.getElementById("resposta").innerHTML = '<b>Resposta:</b>' + resultado
 
-        document.getElementById("texto").innerHTML =
-            "<div class='alert alert-danger'>Resposta: " + result + "</div>";
 
-        console.log(result)
     }
+
 </script>
-
-
 
 </html>
