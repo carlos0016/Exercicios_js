@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <p>17 Escreva um programa para ler 2 valores inteiros e uma das seguintes operações a serem executadas (codificada
+        da seguinte forma: 1. Adição, 2.Subtração, 3.Divisão, 4.Multiplicação). Calcular e escrever o resultado dessa
+        operação sobre os dois valores
+        lidos. Observação: Considere que só serão lidos os valores 1, 2, 3 ou 4. </p>
+    <form>
+        <label for="v1">1</label>
+        <input type="number" id="v1" name="v1" placeholder=" valor 1">
+        <label for="v1">2</label>
+        <input type="number" id="v2" name="v2" placeholder=" valor 2">
+        <label for="opçao3">Qual Operação?</label>
+        <select name="opçao3" id="opçao3" onchange="mainController()">
+            <option value="1" selected>Adição</option>
+            <option value="2">Subtração</option>
+            <option value="3">Multiplicação</option>
+            <option value="4">Divisão</option>
+        </select>
+
+        <button type="button" onclick="mainController()"> Calcular </button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+
+<script>
+    function mainController() {
+        var v1 = parseInt(document.getElementById("v1").value);
+        var v2 = parseInt(document.getElementById("v2").value);
+        var opçao3 = parseInt(document.getElementById("opçao3").value);
+        console.log(v1, v2, opc3);
+        document.getElementById("saida").innerHTML = "Resposta: " + calculo(v1, v2, opçao3);
+    }
+
+    function calculo(valor1 = 0, valor2 = 0, operacao = 0) {
+        if (operacao == 1) {
+            return valor1 + valor2;
+        } else if (operacao == 2) {
+            return valor1 - valor2;
+        } else if (operacao == 3) {
+            return valor1 * valor2
+        }
+
+        return valor1 / valor2
+
+    }
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+</html>
