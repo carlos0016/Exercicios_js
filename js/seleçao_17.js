@@ -1,5 +1,5 @@
 function controllerGols() {
-    var valor1 = document.getElementById("valo1").value;
+    var valor1 = document.getElementById("valor1").value;
     var valor2 = document.getElementById("valor2").value;
     var operacao = document.getElementById("operacao").value;
 
@@ -21,7 +21,7 @@ function calculo(valo1 = 0, valor2 = 0, operacao = 0) {
     } else if (operacao == 4) {
         return valo1 * valor2;
     }
-    return null
+    return 0
 
 
 }
