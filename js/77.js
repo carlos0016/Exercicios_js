@@ -1,15 +1,55 @@
-< !DOCTYPE html >
-    <html lang="pt-br">
+let idades = []
 
-        <head>
-            <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Document</title>
-                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-                            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-                                integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-                                crossorigin="anonymous"></script>
+!(function () {
+    capturaDados();
+})();
 
-                        </head>
+function capturaDados() {
+    document.querySelector("#idade")
+        .addEventListener("keypress", (e) => {
+            console.log(e); //Mosta o evento no console
+            if (e.key == "Enter") {
+                if (e.target.value == "0") {
+                    controllerIdade();
+                } else {
+                    addIdade(e.target.value);
+                    mostracont(idades.length);
+                }
+                e.target.value = ""; // limpa os valores;
+                e.target.focus = true;
+                e.preventDefault(); //cancela o enter de envio do form
+            }
+        })
+}
+
+function controllerIdade() {
+    //let idade = document.querySelector("#idade");
+    let media = mediaIdade();
+    saidaResultado("Media: " + media.toFixed(2));
+}
+
+function addIdade(idade) {
+    let newIdade = parseInt(idade);
+    if (!Number.isNaN(newIdade)) {
+        idades.push(newIdade);
+    }
+}
+
+function mediaIdade() {
+    let somatorio = 0;
+    let cont = idades.length;
+    for (var index = 0; index < cont; index++) {
+        somatorio += idades[index];
+    }
+    return somatorio / cont;
+}
+
+//View -----------------
+function saidaResultado(texto) {
+    document.querySelector("#saidaResultado").innerHTML = texto;
+}
+
+function mostracont(cont) {
+    document.querySelector("#contador").innerHTML = "<b>" + cont + "</b>"
+
+}
